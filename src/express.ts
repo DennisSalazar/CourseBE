@@ -1,11 +1,13 @@
-const express = require('express')
+//const express = require('express')
+import express from 'express';
 const app = express()
 const port = 4444
 
-const bp = require('body-parser');
+//const bp = require('body-parser');
+import bp from 'body-parser';
+
 app.use(bp.json());
 
-/********************* Put this in a middleware*/
 app.use(function(req, res, next) {
     res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
     res.header(
@@ -14,7 +16,6 @@ app.use(function(req, res, next) {
     );
     next();
   });
-/********************* */
 
 const usersData = require('./data.json');
 const tokenManager = require('./jwt');
@@ -31,7 +32,7 @@ app.post('/auth', (req, res) => {
 
     const data = req.body;
 
-    const user = usersData.users.find(u => { return u.name === data.name && u.password === data.password });
+    const user = usersData.users.find((u: { name: any; password: any; }) => { return u.name === data.name && u.password === data.password });
     
     if ( user ) {
         console.log('user is valid!');
@@ -72,5 +73,6 @@ app.get('/users', (req, res) => {
 });
 
 app.listen(port, () => {
+    // tslint:disable-next-line:no-console
     console.log(`My Express API listening at port ${port}!`)
 });
