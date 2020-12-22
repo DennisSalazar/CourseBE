@@ -492,7 +492,7 @@
         "affectsGlobalScope": false
       },
       "./src/express.ts": {
-        "version": "1dfc9543fe11eada5a1769361f5e3860afb6bb569919d0667643fe09880a98c0",
+        "version": "398aad4bf34eaa0e4ed95c2b8012e036f5af623419cf17d969757b4a2a56555e",
         "signature": "f761c91419d0a89422a0004ef1a92929dd4d2d5e5c16758654d8b0467d1998c6",
         "affectsGlobalScope": false
       },

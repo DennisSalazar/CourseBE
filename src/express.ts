@@ -9,7 +9,8 @@ import bp from 'body-parser';
 app.use(bp.json());
 
 app.use(function(req, res, next) {
-    res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+    //res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+    res.header('Access-Control-Allow-Origin', 'http://courseprojectusers.com.s3-website.us-east-2.amazonaws.com');
     res.header(
       'Access-Control-Allow-Headers',
       'Origin, X-Requested-With, Content-Type, Accept, Token'
